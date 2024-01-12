@@ -1,6 +1,6 @@
 import { Container,Row,Col } from "react-bootstrap";
 import HeroImage from '../assets/img/Hero.png';
-import {kelasTerbaru} from "../data/index";
+import {kelasTerbaru, testimonial} from "../data/index";
 
 const HomePage = () => {
   return (
@@ -44,6 +44,37 @@ const HomePage = () => {
             <div className="">
               <p>{kelas.price}</p>
               <button>{kelas.buy}</button>
+            </div>
+            </Col>
+              )
+            })}
+          </Row>
+        </Container>
+      </div>
+      {/* testimoni */}
+      <div className="testimoni w-100 min-vh-100">
+        <Container>
+          <Row>
+            <Col>
+            <h1 className="text-center fw-bold">Rating Pelanggan</h1>
+            <p className="text-center fw-bold">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </Col>
+          </Row>
+          <Row>
+            {testimonial.map((testimoni) => {
+              return(
+            <Col key={testimoni.id}>
+            <img src={testimoni.image} alt="unsplash.com" className="mb-5 rounded-top" />
+            <div className="star mb-2 px-3"> 
+              <i className={testimoni.star1}></i>
+              <i className={testimoni.star2}></i>
+              <i className={testimoni.star3}></i>
+              <i className={testimoni.star4}></i>
+              <i className={testimoni.star5}></i>
+            </div>
+            <h5 className="mb-5 px-3">{testimoni.name}</h5>
+            <div className="">
+              <p>{testimoni.desc}</p>
             </div>
             </Col>
               )
